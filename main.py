@@ -95,11 +95,11 @@ def main(rseed):
     global pset
     pset = create_pset()
     toolbox = setup_toolbox()
-    pop = toolbox.population(n=50)
+    pop = toolbox.population(n=200)
     stats = add_stats()
     hof = tools.HallOfFame(1)
 
-    pop, log = algorithms.eaSimple(pop, toolbox, 0.9, 0.1, 2, stats=stats, halloffame=hof, verbose=True)
+    pop, log = algorithms.eaSimple(pop, toolbox, 0.9, 0.1, 120, stats=stats, halloffame=hof, verbose=True)
     
     epr = tools.selBest(hof, 1)[0]
     iterations = 3
